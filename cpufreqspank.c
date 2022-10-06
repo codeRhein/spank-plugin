@@ -50,9 +50,9 @@ int slurm_spank_init_post_opt(spank_t sp, int ac, char **av)
             return rc; 
         rc = _arg2f(val, &freq);
     }
-    char s_user_freq[7];
+    char s_user_freq[5];
     // gcvt(freq, 6, s_user_freq);
-    snprintf(s_user_freq, 7, "%.2f", freq);
+    snprintf(s_user_freq, 5, "%.1f", freq);
     strcat (s_user_freq, "G");
     _cpufreq_set(s_user_freq);
     return ESPANK_SUCCESS;
